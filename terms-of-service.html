@@ -47,16 +47,28 @@
             font-size: 0.9rem;
         }
         .footer a {
-            color: #007BFF;
+            color: #005BB5; /* Slightly darker blue */
             text-decoration: none;
         }
         .footer a:hover {
             text-decoration: underline;
         }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <button onclick="window.history.back()" style="margin-bottom: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Back</button>
         <h1>Terms of Service</h1>
         <p class="last-updated">Last updated: <span id="last-updated-date"></span></p>
 
@@ -91,10 +103,10 @@
         <p>The operator is not liable for any direct, indirect, incidental, special, or consequential damages arising from the use of the service.</p>
 
         <h2>11. Data Collection and Privacy</h2>
-        <p>By using this app, you agree to the collection and processing of your personal data as described in our <a href="datenschutz.html">Privacy Policy</a>. We comply with the General Data Protection Regulation (GDPR) and ensure that your data is handled securely and transparently.</p>
+        <p>By using this app, you agree to the collection and processing of your personal data as described in our <a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a>. We comply with the General Data Protection Regulation (GDPR) and ensure that your data is handled securely and transparently.</p>
 
         <div class="footer">
-            <p>&copy; 2023 Kirmes. All rights reserved. | <a href="datenschutz.html">Privacy Policy</a></p>
+            <p>&copy; 2023 Kirmes. All rights reserved. | <a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a></p>
         </div>
     </div>
 
