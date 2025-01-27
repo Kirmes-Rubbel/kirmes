@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Kirmes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .last-updated {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last updated: <span id="last-updated-date"></span></p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using Kirmes, you acknowledge and agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you may not use our services.</p>
+
+        <h2>2. Game Participation</h2>
+        <p>This is a free-to-play game simulation of scratch cards. No real money is required to play, and no real money can be won. Any virtual winnings or achievements are for entertainment purposes only. This app does not constitute gambling under German law.</p>
+
+        <h2>3. Virtual Winnings & Payouts</h2>
+        <p>Any in-game 'winnings' are purely virtual and have no monetary value. The operator (Kirmes) has no obligation to convert virtual winnings into real money or other valuable considerations. Any decisions regarding rewards, if offered, are made solely at the discretion of the operator and can be revoked at any time.</p>
+
+        <h2>4. No Legal Claims</h2>
+        <p>Players explicitly acknowledge that they have no legal claim to any payouts or rewards, regardless of their in-game achievements or virtual winnings. All potential rewards are provided purely at the discretion of the operator.</p>
+
+        <h2>5. Age Restrictions</h2>
+        <p>Users must be at least 16 years old to use this application. By using the app, you confirm that you meet this age requirement.</p>
+
+        <h2>6. Geographical Restrictions</h2>
+        <p>This service is intended for users in European countries and Switzerland. Users from other regions may be restricted from certain features or services.</p>
+
+        <h2>7. Game Modifications</h2>
+        <p>The operator reserves the right to modify, suspend, or discontinue any aspect of the game at any time without prior notice.</p>
+
+        <h2>8. Fair Play</h2>
+        <p>Users agree to play fairly and not exploit any technical vulnerabilities. Any form of manipulation or attempted fraud will result in immediate account termination.</p>
+
+        <h2>9. Account Termination</h2>
+        <p>The operator reserves the right to terminate or suspend any user account at its sole discretion, without prior notice or liability.</p>
+
+        <h2>10. Disclaimer of Liability</h2>
+        <p>The operator is not liable for any direct, indirect, incidental, special, or consequential damages arising from the use of the service.</p>
+
+        <h2>11. Data Collection and Privacy</h2>
+        <p>By using this app, you agree to the collection and processing of your personal data as described in our <a href="datenschutz.html">Privacy Policy</a>. We comply with the General Data Protection Regulation (GDPR) and ensure that your data is handled securely and transparently.</p>
+
+        <div class="footer">
+            <p>&copy; 2023 Kirmes. All rights reserved. | <a href="datenschutz.html">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Automatically set the "Last updated" date
+        const lastUpdatedDate = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('last-updated-date').textContent = lastUpdatedDate;
+    </script>
+</body>
+</html>
