@@ -47,11 +47,34 @@
             font-size: 0.9rem;
         }
         .footer a {
-            color: #005BB5; /* Slightly darker blue */
+            color: #005BB5;
             text-decoration: none;
         }
         .footer a:hover {
             text-decoration: underline;
+        }
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .language-btn {
+            padding: 8px 16px;
+            border: 1px solid #007BFF;
+            background: none;
+            color: #007BFF;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .language-btn.active {
+            background: #007BFF;
+            color: white;
+        }
+        .terms-section {
+            display: none;
+        }
+        .terms-section.active {
+            display: block;
         }
         @media (max-width: 600px) {
             h1 {
@@ -69,55 +92,118 @@
 <body>
     <div class="container">
         <button onclick="window.history.back()" style="margin-bottom: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Back</button>
-        <h1>Terms of Service</h1>
-        <p class="last-updated">Last updated: <span id="last-updated-date"></span></p>
+        
+        <div class="language-selector">
+            <button class="language-btn active" onclick="switchLanguage('de')">Deutsch</button>
+            <button class="language-btn" onclick="switchLanguage('en')">English</button>
+        </div>
 
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing and using Kirmes, you acknowledge and agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you may not use our services.</p>
+        <!-- German Terms -->
+        <div id="terms-de" class="terms-section active">
+            <h1>Teilnahmebedingungen</h1>
+            <p class="last-updated">Stand: <span id="last-updated-date-de"></span></p>
 
-        <h2>2. Game Participation</h2>
-        <p>This is a free-to-play game simulation of scratch cards. No real money is required to play, and no real money can be won. Any virtual winnings or achievements are for entertainment purposes only. This app does not constitute gambling under German law.</p>
+            <h2>1. Veranstalter</h2>
+            <p>Der Veranstalter dieses Gewinnspiels ist Kirmes. Kontaktdaten des Veranstalters finden Sie im Impressum der App.</p>
 
-        <h2>3. Virtual Winnings & Payouts</h2>
-        <p>Any in-game 'winnings' are purely virtual and have no monetary value. The operator (Kirmes) has no obligation to convert virtual winnings into real money or other valuable considerations. Any decisions regarding rewards, if offered, are made solely at the discretion of the operator and can be revoked at any time.</p>
+            <h2>2. Teilnahme</h2>
+            <p>Die Teilnahme am Gewinnspiel erfolgt durch das Freiscratchern der digitalen Rubbelfelder in der App. Die Teilnahme am Gewinnspiel ist kostenlos und ausschließlich über die mobile Kirmes-App möglich. Teilnahmeberechtigt sind Personen mit Wohnsitz in Deutschland, die mindestens 18 Jahre alt sind.</p>
 
-        <h2>4. No Legal Claims</h2>
-        <p>Players explicitly acknowledge that they have no legal claim to any payouts or rewards, regardless of their in-game achievements or virtual winnings. All potential rewards are provided purely at the discretion of the operator.</p>
+            <h2>3. Gewinnspielzeitraum</h2>
+            <p>Das Gewinnspiel läuft auf unbestimmte Zeit. Der Veranstalter behält sich das Recht vor, das Gewinnspiel jederzeit ohne Vorankündigung und ohne Angabe von Gründen abzubrechen oder zu beenden.</p>
 
-        <h2>5. Age Restrictions</h2>
-        <p>Users must be at least 16 years old to use this application. By using the app, you confirm that you meet this age requirement.</p>
+            <h2>4. Gewinne</h2>
+            <p>Die möglichen Gewinne werden in der App angezeigt. Die Gewinnchancen sind für alle Teilnehmer gleich. Ein Anspruch auf Barauszahlung der Gewinne besteht nicht. Die Gewinne sind nicht übertragbar.</p>
 
-        <h2>6. Geographical Restrictions</h2>
-        <p>This service is intended for users in European countries and Switzerland. Users from other regions may be restricted from certain features or services.</p>
+            <h2>5. Gewinnermittlung</h2>
+            <p>Die Gewinnermittlung erfolgt automatisch durch einen Zufallsgenerator. Die Gewinnbenachrichtigung erfolgt unmittelbar in der App. Der Gewinnanspruch verfällt, wenn der Gewinn nicht innerhalb von 30 Tagen nach der Benachrichtigung angefordert wird.</p>
 
-        <h2>7. Game Modifications</h2>
-        <p>The operator reserves the right to modify, suspend, or discontinue any aspect of the game at any time without prior notice.</p>
+            <h2>6. Ausschluss vom Gewinnspiel</h2>
+            <p>Der Veranstalter behält sich das Recht vor, Teilnehmer bei Verdacht auf Missbrauch, Manipulation oder bei Verstoß gegen diese Teilnahmebedingungen ohne Angabe von Gründen vom Gewinnspiel auszuschließen.</p>
 
-        <h2>8. Fair Play</h2>
-        <p>Users agree to play fairly and not exploit any technical vulnerabilities. Any form of manipulation or attempted fraud will result in immediate account termination.</p>
+            <h2>7. Datenschutz</h2>
+            <p>Die im Rahmen des Gewinnspiels erhobenen Daten werden ausschließlich für die Durchführung des Gewinnspiels verwendet und nach dessen Beendigung gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten bestehen. Es gelten die Datenschutzbestimmungen des Veranstalters.</p>
 
-        <h2>9. Account Termination</h2>
-        <p>The operator reserves the right to terminate or suspend any user account at its sole discretion, without prior notice or liability.</p>
+            <h2>8. Vorzeitige Beendigung</h2>
+            <p>Der Veranstalter behält sich vor, das Gewinnspiel jederzeit ohne Vorankündigung und ohne Angabe von Gründen abzubrechen oder zu beenden. Dies gilt insbesondere bei höherer Gewalt oder falls das Gewinnspiel aus organisatorischen, technischen oder rechtlichen Gründen nicht durchgeführt bzw. fortgesetzt werden kann.</p>
 
-        <h2>10. Disclaimer of Liability</h2>
-        <p>The operator is not liable for any direct, indirect, incidental, special, or consequential damages arising from the use of the service.</p>
+            <h2>9. Rechtsweg</h2>
+            <p>Der Rechtsweg ist ausgeschlossen. Es gilt deutsches Recht. Von der Teilnahme ausgeschlossen sind Mitarbeiter des Veranstalters sowie deren Angehörige.</p>
 
-        <h2>11. Data Collection and Privacy</h2>
-        <p>By using this app, you agree to the collection and processing of your personal data as described in our <a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a>. We comply with the General Data Protection Regulation (GDPR) and ensure that your data is handled securely and transparently.</p>
+            <h2>10. Salvatorische Klausel</h2>
+            <p>Sollten einzelne Bestimmungen dieser Teilnahmebedingungen unwirksam sein oder werden, bleibt die Gültigkeit der übrigen Bedingungen hiervon unberührt.</p>
+        </div>
+
+        <!-- English Terms -->
+        <div id="terms-en" class="terms-section">
+            <h1>Terms and Conditions</h1>
+            <p class="last-updated">Last updated: <span id="last-updated-date-en"></span></p>
+
+            <h2>1. Organizer</h2>
+            <p>The organizer of this prize competition is Kirmes. Contact details can be found in the app's imprint.</p>
+
+            <h2>2. Participation</h2>
+            <p>Participation in the prize competition is through scratching digital scratch fields in the app. Participation is free of charge and only possible through the mobile Kirmes app. Eligible participants must be at least 18 years old and reside in Germany.</p>
+
+            <h2>3. Competition Period</h2>
+            <p>The prize competition runs indefinitely. The organizer reserves the right to cancel or terminate the competition at any time without prior notice and without giving reasons.</p>
+
+            <h2>4. Prizes</h2>
+            <p>Possible prizes are displayed in the app. The chances of winning are equal for all participants. There is no entitlement to cash payment of prizes. Prizes are non-transferable.</p>
+
+            <h2>5. Winner Selection</h2>
+            <p>Winners are determined automatically by a random generator. Prize notifications occur immediately in the app. The prize claim expires if the prize is not claimed within 30 days of notification.</p>
+
+            <h2>6. Exclusion from Competition</h2>
+            <p>The organizer reserves the right to exclude participants from the competition without stating reasons if there is suspicion of abuse, manipulation, or violation of these terms and conditions.</p>
+
+            <h2>7. Data Protection</h2>
+            <p>Data collected during the competition will be used exclusively for conducting the competition and will be deleted after its completion, unless legal retention obligations exist. The organizer's privacy policy applies.</p>
+
+            <h2>8. Early Termination</h2>
+            <p>The organizer reserves the right to cancel or terminate the competition at any time without prior notice and without giving reasons. This applies particularly in cases of force majeure or if the competition cannot be conducted or continued for organizational, technical, or legal reasons.</p>
+
+            <h2>9. Legal Recourse</h2>
+            <p>Legal recourse is excluded. German law applies. Employees of the organizer and their relatives are excluded from participation.</p>
+
+            <h2>10. Severability Clause</h2>
+            <p>Should individual provisions of these terms and conditions be or become invalid, the validity of the remaining conditions shall remain unaffected.</p>
+
+            <p style="font-style: italic; margin-top: 20px;">Note: In case of any discrepancies between the German and English versions, the German version shall prevail.</p>
+        </div>
 
         <div class="footer">
-            <p>&copy; 2023 Kirmes. All rights reserved. | <a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a></p>
+            <p>&copy; 2025 Kirmes. All rights reserved. | <a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a></p>
         </div>
     </div>
 
     <script>
-        // Automatically set the "Last updated" date
-        const lastUpdatedDate = new Date().toLocaleDateString('en-US', {
+        function switchLanguage(lang) {
+            // Update buttons
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.language-btn[onclick*="${lang}"]`).classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.terms-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(`terms-${lang}`).classList.add('active');
+        }
+
+        // Set the last updated date
+        const lastUpdatedDate = new Date().toLocaleDateString('de-DE', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
-        document.getElementById('last-updated-date').textContent = lastUpdatedDate;
+        document.getElementById('last-updated-date-de').textContent = lastUpdatedDate;
+        document.getElementById('last-updated-date-en').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
     </script>
 </body>
 </html>
