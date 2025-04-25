@@ -1,203 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Sweepstakes Rules - Kirmes</title>
+    <title>Offizielle Gewinnspielregeln - Kirmes</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 20px;
+            background-color: #f2f2f7;
+            color: #000;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         h1 {
-            font-size: 2rem;
+            font-size: 24px;
+            font-weight: bold;
             margin-bottom: 10px;
-            color: #000;
         }
         h2 {
-            font-size: 1.5rem;
+            font-size: 18px;
+            font-weight: bold;
             margin-top: 20px;
             margin-bottom: 10px;
-            color: #000;
         }
         p {
             margin: 10px 0;
+            white-space: pre-wrap;
         }
-        .last-updated {
-            color: #666;
-            font-size: 0.9rem;
+        .date {
+            color: #8e8e93;
+            font-size: 14px;
             margin-bottom: 20px;
-        }
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .footer a {
-            color: #005BB5;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        .language-selector {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .language-btn {
-            padding: 8px 16px;
-            border: 1px solid #007BFF;
-            background: none;
-            color: #007BFF;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .language-btn.active {
-            background: #007BFF;
-            color: white;
-        }
-        .terms-section {
-            display: none;
-        }
-        .terms-section.active {
-            display: block;
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.2rem;
-            }
-            .container {
-                padding: 10px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <button onclick="window.history.back()" style="margin-bottom: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Back</button>
-        
-        <div class="language-selector">
-            <button class="language-btn active" onclick="switchLanguage('de')">Deutsch</button>
-            <button class="language-btn" onclick="switchLanguage('en')">English</button>
-        </div>
+        <h1>Offizielle Gewinnspielregeln</h1>
+        <p class="date">Stand: <script>document.write(new Date().toLocaleDateString('de-DE', {year: 'numeric', month: 'long', day: 'numeric'}))</script></p>
 
-        <!-- German Terms -->
-        <div id="terms-de" class="terms-section active">
-            <h1>Offizielle Gewinnspielregeln</h1>
-            <p class="last-updated">Stand: <span id="last-updated-date-de"></span></p>
+        <h2>Haftungsausschluss</h2>
+        <p><strong>Apple ist kein Sponsor dieser Aktion und in keiner Weise daran beteiligt. Diese Aktion wird ausschließlich von Kirmes Software GmbH durchgeführt und verantwortet.</strong></p>
 
-            <h2>Haftungsausschluss</h2>
-            <p><strong>Apple ist kein Sponsor dieser Aktion und in keiner Weise daran beteiligt. Diese Aktion wird ausschließlich von Kirmes Software GmbH durchgeführt und verantwortet.</strong></p>
+        <h2>Veranstalter</h2>
+        <p>Dieses Gewinnspiel wird von Kirmes Software GmbH ('der Veranstalter') durchgeführt und gesponsert.</p>
 
-            <h2>Veranstalter</h2>
-            <p>Dieses Gewinnspiel wird von Kirmes Software GmbH ('der Veranstalter') durchgeführt und gesponsert.</p>
+        <h2>Spielmechanik und Gewinne</h2>
+        <p>Das Spiel besteht aus zwei Hauptkomponenten:
 
-            <h2>Spielmechanik und Gewinne</h2>
-            <p>Die Spielmechanik besteht aus zwei Phasen: Zunächst erhalten Sie durch das Freiscratchern einer Rubbelkarte einen Einsatzbetrag für das Risiko-Spiel. Dieser angezeigte Betrag ist kein direkter Gewinn, sondern dient ausschließlich als Einsatz für das Risiko-Spiel, in dem der tatsächliche Gewinn bestimmt wird. Alle Aktivitäten und angezeigten Werte im Spiel sind rein spielerischer Natur. Ein tatsächlicher Gewinn entsteht erst bei der finalen Auszahlung im Risiko-Spiel. Der finale Gewinnbetrag wird erst bei der Auszahlung festgelegt und kann von den im Spiel angezeigten Werten abweichen. Die Teilnahme ist kostenlos und unabhängig von einem Kauf.</p>
+1. Rubbelkarten: Hier können Spieler virtuelle Spielmünzen gewinnen. Diese Spielmünzen haben keinen Realwährungswert und dienen ausschließlich zum Erwerb von Pokal-Karten.
 
-            <h2>Gewinnstruktur</h2>
-            <p>• Bronze Liga: Gewinne bis zu €10,00<br>
-            • Silber Liga: Gewinne bis zu €20,00<br>
-            • Jackpot Liga: Gewinne bis zu €20,00 und exklusive Chance auf den Jackpot. Der Jackpot kann nur einmal gewonnen werden und wird danach neu aufgesetzt.</p>
+2. Pokal-Karten: Mit Spielmünzen erworbene Pokal-Karten ermöglichen die Teilnahme an Verlosungen für Sachpreise. Je höher die Liga (Bronze, Silber, Jackpot), desto wertvoller können die möglichen Sachpreise sein.</p>
 
-            <h2>Gewinnchancen</h2>
-            <p>Die Gewinnchancen sind abhängig von der Gesamtzahl der teilnehmenden Spieler in der jeweiligen Liga zum Zeitpunkt der Teilnahme. Mit jeder höheren Liga steigt die Anzahl der ausgeschütteten Preise. Die Jackpot Liga bietet exklusiv die Chance auf den Jackpot und die höchsten Gewinne. Die Gewinner werden durch ein faires, computergestütztes Zufallsverfahren ermittelt.</p>
+        <h2>Gewinnstruktur</h2>
+        <p>• Rubbelkarten: Virtuelle Spielmünzen
+• Bronze Liga: Kleine Sachpreise
+• Silber Liga: Mittlere Sachpreise
+• Jackpot Liga: Exklusive und wertvolle Sachpreise
 
-            <h2>Spielablauf</h2>
-            <p>1. Wählen Sie eine Rubbelkarte aus<br>
-            2. Rubbeln Sie die Karte frei, um Ihren Einsatzbetrag für das Risiko-Spiel zu erhalten<br>
-            3. Verwenden Sie den Einsatzbetrag im Risiko-Spiel, um Ihren tatsächlichen Gewinn zu erspielen</p>
+Alle Spielmünzen und Pokal-Karten sind virtuelle Gegenstände ohne Bargeldwert. Sie dienen ausschließlich dem Spielvergnügen und der Chance auf Sachpreise.</p>
 
-            <h2>Teilnahmeberechtigung</h2>
-            <p>Teilnahmeberechtigt sind Personen ab 18 Jahren mit Wohnsitz in Deutschland. Mitarbeiter des Veranstalters und deren Angehörige sind von der Teilnahme ausgeschlossen.</p>
+        <h2>Gewinnchancen</h2>
+        <p>Die Gewinnchancen sind abhängig von der Gesamtzahl der teilnehmenden Spieler in der jeweiligen Liga zum Zeitpunkt der Teilnahme. Mit jeder höheren Liga steigt die Anzahl der ausgeschütteten Preise. Die Jackpot Liga bietet exklusiv die Chance auf den Jackpot und die höchsten Gewinne. Die Gewinner werden durch ein faires, computergestütztes Zufallsverfahren ermittelt.</p>
 
-            <h2>Zusätzliche Bedingungen</h2>
-            <p>Es gelten die vollständigen Teilnahmebedingungen. Der Veranstalter behält sich das Recht vor, das Gewinnspiel jederzeit zu ändern oder zu beenden.</p>
-        </div>
+        <h2>Spielablauf</h2>
+        <p>1. Wählen Sie eine Rubbelkarte aus
+2. Rubbeln Sie die Karte frei, um Ihren Einsatzbetrag für das Risiko-Spiel zu erhalten
+3. Verwenden Sie den Einsatzbetrag im Risiko-Spiel, um Ihren tatsächlichen Gewinn zu erspielen</p>
 
-        <!-- English Terms -->
-        <div id="terms-en" class="terms-section">
-            <h1>Official Sweepstakes Rules</h1>
-            <p class="last-updated">Last updated: <span id="last-updated-date-en"></span></p>
+        <h2>Teilnahmeberechtigung</h2>
+        <p>Teilnahmeberechtigt sind Personen ab 18 Jahren mit Wohnsitz in Deutschland. Mitarbeiter des Veranstalters und deren Angehörige sind von der Teilnahme ausgeschlossen.</p>
 
-            <h2>Disclaimer</h2>
-            <p><strong>Apple is not a sponsor of this promotion and is not involved in it in any manner. This promotion is solely operated and sponsored by Kirmes Software GmbH.</strong></p>
-
-            <h2>Sponsor</h2>
-            <p>This sweepstakes is operated and sponsored by Kirmes Software GmbH ('the Sponsor').</p>
-
-            <h2>Gameplay and Prizes</h2>
-            <p>The gameplay consists of two phases: First, scratching a card reveals an entry amount for the risk game. This displayed amount is not a direct win but serves exclusively as an entry stake for the risk game, where the actual prize is determined. All in-game activities and displayed values are purely for entertainment purposes. An actual prize is only determined during the final payout in the risk game. The final prize amount is established upon payout and may differ from values shown during gameplay. Participation is free and no purchase is necessary.</p>
-
-            <h2>Prize Structure</h2>
-            <p>• Bronze League: Prizes up to €10.00<br>
-            • Silver League: Prizes up to €20.00<br>
-            • Jackpot League: Prizes up to €20.00 and exclusive chance to win the jackpot. The jackpot can only be won once and will be reset afterward.</p>
-
-            <h2>Odds of Winning</h2>
-            <p>The odds of winning depend on the total number of participating players in each league at the time of entry. The number of prizes being distributed increases with each higher league. The Jackpot League exclusively offers the chance to win the jackpot and highest prizes. Winners are selected through a fair, computer-generated random selection process.</p>
-
-            <h2>How to Play</h2>
-            <p>1. Select a scratch card<br>
-            2. Scratch the card to reveal your entry amount for the risk game<br>
-            3. Use the entry amount in the risk game to play for your actual prize</p>
-
-            <h2>Eligibility</h2>
-            <p>Participation is open to individuals aged 18 or older who reside in Germany. Employees of the Sponsor and their relatives are not eligible to participate.</p>
-
-            <h2>Additional Terms</h2>
-            <p>Full terms and conditions apply. The Sponsor reserves the right to modify or terminate the sweepstakes at any time.</p>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2025 Kirmes. All rights reserved. | <a href="privacy-policy.html" aria-label="Read our Privacy Policy">Privacy Policy</a></p>
-        </div>
+        <h2>Zusätzliche Bedingungen</h2>
+        <p>Es gelten die vollständigen Teilnahmebedingungen. Der Veranstalter behält sich das Recht vor, das Gewinnspiel jederzeit zu ändern oder zu beenden.</p>
     </div>
-
-    <script>
-        function switchLanguage(lang) {
-            // Update buttons
-            document.querySelectorAll('.language-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`.language-btn[onclick*="${lang}"]`).classList.add('active');
-            
-            // Update content
-            document.querySelectorAll('.terms-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(`terms-${lang}`).classList.add('active');
-        }
-
-        // Set the last updated date
-        const lastUpdatedDate = new Date().toLocaleDateString('de-DE', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-        document.getElementById('last-updated-date-de').textContent = lastUpdatedDate;
-        document.getElementById('last-updated-date-en').textContent = new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    </script>
 </body>
 </html>
