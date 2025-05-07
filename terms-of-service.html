@@ -3,93 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offizielle Gewinnspielregeln - Kirmes</title>
+    <title>Official Rules - Kirmes</title>
     <style>
+        :root {
+            --kirmes-red: #E83532;
+            --kirmes-gold: #D9A621;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f2f2f7;
-            color: #000;
+            background-color: #121212;
+            color: white;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .language-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .language-btn.active {
+            background: linear-gradient(135deg, var(--kirmes-red), var(--kirmes-gold));
         }
         h1 {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             margin-bottom: 10px;
+            text-align: center;
+            background: linear-gradient(var(--kirmes-gold), var(--kirmes-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+        .disclaimer {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         h2 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--kirmes-gold);
         }
         p {
-            margin: 10px 0;
-            white-space: pre-wrap;
+            margin: 15px 0;
+            color: rgba(255, 255, 255, 0.9);
         }
         ul, ol {
-            margin: 10px 0 10px 20px;
+            margin: 15px 0 15px 20px;
+            color: rgba(255, 255, 255, 0.9);
         }
         .date {
-            color: #8e8e93;
+            color: rgba(255, 255, 255, 0.6);
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
-        strong {
-            font-weight: bold;
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .highlight {
+            color: var(--kirmes-gold);
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Offizielle Gewinnspielregeln</h1>
-        <p class="date">Stand: <script>document.write(new Date().toLocaleDateString('de-DE', {year: 'numeric', month: 'long', day: 'numeric'}))</script></p>
+        <h1>OFFICIAL RULES</h1>
+        <p class="subtitle">No purchase or gameplay is required. Free entry to our sweepstakes via fw@kirmes.app</p>
+        
+        <div class="language-selector">
+            <button class="language-btn active" onclick="switchLanguage('de')">Deutsch</button>
+            <button class="language-btn" onclick="switchLanguage('en')">English</button>
+        </div>
 
-        <h2>Haftungsausschluss</h2>
-        <p><strong>Apple ist kein Sponsor dieser Aktion und in keiner Weise daran beteiligt. Diese Aktion wird ausschließlich von Kirmes Software GmbH durchgeführt und verantwortet.</strong></p>
+        <div id="german" class="content active">
+            <p class="date">Stand: <script>document.write(new Date().toLocaleDateString('de-DE', {year: 'numeric', month: 'long', day: 'numeric'}))</script></p>
 
-        <h2>Veranstalter</h2>
-        <p>Dieses Gewinnspiel wird von Kirmes Software GmbH ("der Veranstalter") durchgeführt und gesponsert.</p>
+            <div class="disclaimer">
+                <h3>⚠️ WICHTIGER HINWEIS</h3>
+                <p>Apple ist kein Sponsor dieser Aktion und in keiner Weise daran beteiligt. Diese Aktion wird ausschließlich von Kirmes Software GmbH durchgeführt und verantwortet.</p>
+            </div>
 
-        <h2>Spielmechanik und Gewinne</h2>
-        <ul>
-            <li><strong>Rubbelkarten:</strong> Spieler können virtuelle Spielmünzen gewinnen. Diese Spielmünzen haben keinen Realwährungswert und dienen ausschließlich zum Erwerb von Pokal-Karten.</li>
-            <li><strong>Pokal-Karten:</strong> Mit Spielmünzen erworbene Pokal-Karten ermöglichen die Teilnahme an Verlosungen für Sachpreise. Je höher die Liga (Bronze, Silber, Jackpot), desto wertvoller können die möglichen Sachpreise sein.</li>
-        </ul>
+            <p class="highlight">Die kostenlose Teilnahme am Gewinnspiel erfolgt durch Anmeldung auf unserer Website www.kirmes.app per E-Mail. Medaillen aus den Mini-Spielen sind zusätzliche Bonus-Lose.</p>
 
-        <h2>Gewinnstruktur</h2>
-        <ul>
-            <li>Rubbelkarten: Virtuelle Spielmünzen</li>
-            <li>Bronze Liga: Kleine Sachpreise</li>
-            <li>Silber Liga: Mittlere Sachpreise</li>
-            <li>Jackpot Liga: Exklusive und wertvolle Sachpreise</li>
-        </ul>
-        <p>Alle Spielmünzen und Pokal-Karten sind virtuelle Gegenstände ohne Bargeldwert. Sie dienen ausschließlich dem Spielvergnügen und der Chance auf Sachpreise.</p>
+            <h2>Veranstalter</h2>
+            <p>Dieses Gewinnspiel wird von Kirmes Software GmbH ('der Veranstalter') durchgeführt und gesponsert.</p>
 
-        <h2>Gewinnchancen</h2>
-        <p>Die Gewinnchancen sind abhängig von der Gesamtzahl der teilnehmenden Spieler in der jeweiligen Liga zum Zeitpunkt der Teilnahme. Mit jeder höheren Liga steigt die Anzahl der ausgeschütteten Preise. Die Jackpot Liga bietet exklusiv die Chance auf den Jackpot und die höchsten Gewinne. Die Gewinner werden durch ein faires, computergestütztes Zufallsverfahren ermittelt.</p>
+            <h2>Spielmechanik und Gewinne</h2>
+            <p>Das Spiel besteht aus zwei Hauptkomponenten:</p>
+            <ol>
+                <li>Rubbelkarten: Hier können Spieler virtuelle Münzen gewinnen. Diese Münzen haben keinen Realwährungswert und können verwendet werden, um Mini-Spiele zu spielen.</li>
+                <li>Mini-Spiele: Mit Münzen können Sie geschicklichkeitsbasierte Mini-Spiele spielen. Je nach Ihrer Leistung können Sie Bronze-, Silber- oder Goldmedaillen gewinnen.</li>
+            </ol>
 
-        <h2>Spielablauf</h2>
-        <ol>
-            <li>Wählen Sie eine Rubbelkarte aus.</li>
-            <li>Rubbeln Sie die Karte frei, um Ihren Einsatzbetrag für das Risiko-Spiel zu erhalten.</li>
-            <li>Verwenden Sie den Einsatzbetrag im Risiko-Spiel, um Ihren tatsächlichen Gewinn zu erspielen.</li>
-        </ol>
+            <h2>Gewinnstruktur</h2>
+            <ul>
+                <li>Bronze Liga: Kleine Sachpreise</li>
+                <li>Silber Liga: Mittlere Sachpreise</li>
+                <li>Gold Liga: Exklusive und wertvolle Sachpreise</li>
+            </ul>
+            <p>Alle Münzen und Medaillen sind virtuelle Gegenstände ohne Bargeldwert. Sie dienen ausschließlich dem Spielspaß und der Chance auf Sachpreise.</p>
 
-        <h2>Teilnahmeberechtigung</h2>
-        <p>Teilnahmeberechtigt sind Personen ab 18 Jahren mit Wohnsitz in Deutschland. Mitarbeiter des Veranstalters und deren Angehörige sind von der Teilnahme ausgeschlossen.</p>
+            <h2>Medaillen und Verlosung</h2>
+            <p>Medaillen werden basierend auf Ihrer Geschicklichkeit in den Mini-Spielen vergeben. Jede Medaille zählt als ein zusätzliches Bonus-Los für die Verlosung und erhöht Ihre Gewinnchancen. Die Teilnahme an der Verlosung ist kostenlos möglich: Sie können auf unserer Website www.kirmes.app mit dem gewünschten Liga-Namen (Bronze, Silber oder Gold) und einem beliebigen Wort teilnehmen. Preise werden für jede Liga (Bronze, Silber, Gold) separat ausgelost, um eine faire Verteilung zu gewährleisten. Die Gewinner werden durch eine faire, computergestützte Zufallsauswahl ermittelt und erhalten Sachpreise.</p>
 
-        <h2>Zusätzliche Bedingungen</h2>
-        <p>Es gelten die vollständigen Teilnahmebedingungen. Der Veranstalter behält sich das Recht vor, das Gewinnspiel jederzeit zu ändern oder zu beenden.</p>
+            <h2>Gewinnchancen</h2>
+            <p>Die Gewinnchancen hängen von der Gesamtzahl der von allen Spielern in jeder Liga gesammelten Medaillen zum Zeitpunkt der Verlosung ab. Die Gewinner werden durch ein faires, computergestütztes Zufallsverfahren ermittelt.</p>
+
+            <h2>Spielablauf</h2>
+            <ol>
+                <li>Erstellen Sie ein kostenloses Konto und folgen Sie dem Tutorial</li>
+                <li>Verdienen Sie Münzen durch Rubbelkarten</li>
+                <li>Verwenden Sie Münzen, um Mini-Spiele zu spielen</li>
+                <li>Sammeln Sie Medaillen in den Mini-Spielen, um an der Verlosung teilzunehmen</li>
+            </ol>
+
+            <h2>Gewinnbenachrichtigung</h2>
+            <p>Die Gewinner werden über die in der Kontoverwaltung hinterlegten Kontaktinformationen (E-Mail und/oder Telefon) benachrichtigt. Bitte stellen Sie sicher, dass Ihre Kontaktdaten in den Kontoeinstellungen aktuell und korrekt sind, da wir Sie sonst nicht über einen möglichen Gewinn informieren können.</p>
+
+            <h2>Teilnahmeberechtigung</h2>
+            <p>Teilnahmeberechtigt sind Personen ab 18 Jahren mit Wohnsitz in Deutschland. Mitarbeiter des Veranstalters und deren Angehörige sind von der Teilnahme ausgeschlossen.</p>
+
+            <h2>Zusätzliche Bedingungen</h2>
+            <p>Es gelten die vollständigen Teilnahmebedingungen. Der Veranstalter behält sich das Recht vor, das Gewinnspiel jederzeit zu ändern oder zu beenden.</p>
+        </div>
+
+        <div id="english" class="content">
+            <p class="date">Last updated: <script>document.write(new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}))</script></p>
+
+            <div class="disclaimer">
+                <h3>⚠️ IMPORTANT NOTICE</h3>
+                <p>Apple is not a sponsor of this promotion and is not involved in it in any manner. This promotion is solely operated and sponsored by Kirmes Software GmbH.</p>
+            </div>
+
+            <p class="highlight">Enter the sweepstakes for free by signing up with your email on our website www.kirmes.app. Medals earned in mini-games count as bonus entries.</p>
+
+            <h2>Sponsor</h2>
+            <p>This sweepstakes is operated and sponsored by Kirmes Software GmbH ('the Sponsor').</p>
+
+            <h2>Gameplay and Prizes</h2>
+            <p>The game consists of two main components:</p>
+            <ol>
+                <li>Scratch Cards: Earn virtual coins by scratching cards. These coins have no real-world monetary value and can be used to play mini games.</li>
+                <li>Mini Games: Use coins to play skill-based mini games. Depending on your performance, you can earn bronze, silver, or gold medals.</li>
+            </ol>
+
+            <h2>Prize Structure</h2>
+            <ul>
+                <li>Bronze League: Small Material Prizes</li>
+                <li>Silver League: Medium Material Prizes</li>
+                <li>Gold League: Exclusive and Valuable Material Prizes</li>
+            </ul>
+            <p>All coins and medals are virtual items with no cash value. They are solely for gaming enjoyment and the chance to win material prizes.</p>
+
+            <h2>Medals and Raffle</h2>
+            <p>Medals are rewarded based on your skill in the mini games. Each medal counts as an additional bonus entry into the raffle and increases your chances of winning. Entry to the sweepstakes is free: you can sign up on our website www.kirmes.app with the league you wish to enter (Bronze, Silver, or Gold) and any random word. Prizes are drawn separately for each league to ensure fair distribution. Winners are determined by a fair, computer-generated random draw and receive physical prizes.</p>
+
+            <h2>Odds of Winning</h2>
+            <p>The odds of winning depend on the total number of medals earned by all players in each league at the time of the raffle. Winners are selected through a fair, computer-generated random selection process.</p>
+
+            <h2>How to Play</h2>
+            <ol>
+                <li>Create a free account and follow the tutorial</li>
+                <li>Earn coins through scratchcards</li>
+                <li>Use coins to play mini games</li>
+                <li>Earn medals in the mini games to enter the raffle</li>
+            </ol>
+
+            <h2>Winner Notification</h2>
+            <p>Winners will be notified through the contact information (email and/or phone) provided in their account management settings. Please ensure your contact details are current and accurate in your account settings, as we will be unable to inform you about potential winnings otherwise.</p>
+
+            <h2>Eligibility</h2>
+            <p>Participation is open to individuals aged 18 or older who reside in Germany. Employees of the Sponsor and their relatives are not eligible to participate.</p>
+
+            <h2>Additional Terms</h2>
+            <p>Full terms and conditions apply. The Sponsor reserves the right to modify or terminate the sweepstakes at any time.</p>
+        </div>
     </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all content
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Show selected language content
+            document.getElementById(lang === 'de' ? 'german' : 'english').classList.add('active');
+            // Update button styles
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
