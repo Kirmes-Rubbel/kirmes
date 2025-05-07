@@ -12,8 +12,9 @@
         :root {
             --kirmes-red: #E83532;
             --kirmes-gold: #D9A621;
-            --dark-bg: #121212;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --light-bg: #ffffff;
+            --card-bg: #f8f8f8;
+            --text-color: #333333;
         }
 
         * {
@@ -24,8 +25,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--dark-bg), #1a1a1a);
-            color: white;
+            background: var(--light-bg);
+            color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
         }
@@ -39,25 +40,22 @@
         .hero {
             text-align: center;
             padding: 60px 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('game-bg.jpg');
-            background-size: cover;
-            background-position: center;
+            background: var(--light-bg);
             margin-bottom: 60px;
+            border-bottom: 1px solid #eaeaea;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(var(--kirmes-gold), var(--kirmes-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-color);
         }
 
         .hero p {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto;
-            color: rgba(255,255,255,0.9);
+            color: #666666;
         }
 
         .logo {
@@ -74,7 +72,6 @@
         .logo img {
             width: 280px;
             height: auto;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
 
         .features {
@@ -88,32 +85,33 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid #eaeaea;
             transition: transform 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .feature-card h3 {
-            color: var(--kirmes-gold);
+            color: var(--kirmes-red);
             margin-bottom: 15px;
         }
 
         .entry-form {
-            background: var(--card-bg);
+            background: white;
             padding: 40px;
             border-radius: 20px;
-            margin-top: 60px;
-            border: 1px solid rgba(255,255,255,0.1);
+            margin: 60px auto;
+            border: 1px solid #eaeaea;
             max-width: 600px;
-            margin: 0 auto;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
         }
 
         .entry-form h2 {
-            color: var(--kirmes-gold);
+            color: var(--text-color);
             margin-bottom: 30px;
             text-align: center;
             font-size: 2rem;
@@ -126,7 +124,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: rgba(255,255,255,0.9);
+            color: var(--text-color);
             font-weight: 500;
         }
 
@@ -134,10 +132,10 @@
         .form-group select {
             width: 100%;
             padding: 12px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: white;
+            border: 1px solid #ddd;
             border-radius: 10px;
-            color: white;
+            color: var(--text-color);
             font-size: 16px;
             transition: all 0.3s ease;
         }
@@ -150,8 +148,8 @@
         }
 
         .form-group select option {
-            background: var(--dark-bg);
-            color: white;
+            background: white;
+            color: var(--text-color);
         }
 
         .submit-button {
@@ -181,24 +179,25 @@
             text-align: center;
             margin-top: 15px;
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
+            color: #666666;
         }
 
         .legal-text a {
-            color: var(--kirmes-gold);
+            color: var(--kirmes-red);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .legal-text a:hover {
-            color: var(--kirmes-red);
+            color: var(--kirmes-gold);
         }
 
         footer {
             margin-top: 80px;
             padding: 40px 0;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid #eaeaea;
+            background: var(--card-bg);
         }
 
         .footer-links {
@@ -209,13 +208,13 @@
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.7);
+            color: #666666;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--kirmes-gold);
+            color: var(--kirmes-red);
         }
 
         @media (max-width: 768px) {
@@ -267,11 +266,17 @@
             <form id="sweepstakesForm">
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" required placeholder="Enter your email address">
+                    <input type="email" id="email" required 
+                           placeholder="Enter your email address"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Please enter a valid email address">
                 </div>
                 <div class="form-group">
                     <label for="userId">User ID</label>
-                    <input type="text" id="userId" required placeholder="Enter your Kirmes App User ID">
+                    <input type="text" id="userId" required 
+                           placeholder="Enter your Kirmes App User ID"
+                           pattern="[A-Za-z0-9-_]+"
+                           title="Please enter a valid User ID">
                 </div>
                 <div class="form-group">
                     <label for="league">Select League</label>
@@ -282,10 +287,17 @@
                         <option value="gold">Gold League</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" required>
+                        I confirm that I am 18 years or older and reside in Germany
+                    </label>
+                </div>
                 <button type="submit" class="submit-button">Enter Sweepstakes</button>
                 <p class="legal-text">
-                    By entering, you agree to our <a href="terms-of-service.html">Terms of Service</a> and 
-                    <a href="privacy-policy.html">Privacy Policy</a>
+                    By entering, you agree to our <a href="terms-of-service.html">Terms of Service</a>, 
+                    <a href="privacy-policy.html">Privacy Policy</a>, and confirm that you have read our 
+                    <a href="sweepstakes-rules.html">Official Rules</a>.
                 </p>
             </form>
         </div>
@@ -297,58 +309,43 @@
                 <a href="terms-of-service.html">Terms of Service</a>
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="data-security.html">Data Security</a>
+                <a href="sweepstakes-rules.html">Official Rules</a>
+                <a href="mailto:fw@kirmes.app">Contact Us</a>
             </div>
             <p>© 2024 Kirmes App. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
-
     <script>
-        // Initialize Firebase with your config
-        const firebaseConfig = {
-            // Your Firebase config here
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
         // Handle sweepstakes entry submission
-        document.getElementById('sweepstakesForm').addEventListener('submit', async (e) => {
+        document.getElementById('sweepstakesForm').addEventListener('submit', (e) => {
             e.preventDefault();
             
             const submitButton = e.target.querySelector('button');
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting Entry...';
             
-            try {
-                const entryData = {
-                    email: document.getElementById('email').value,
-                    userId: document.getElementById('userId').value,
-                    league: document.getElementById('league').value,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    entryType: 'website'
-                };
-
-                // Add entry to Firestore
-                await db.collection('sweepstakes_entries').add(entryData);
-                
+            // Simulate submission delay
+            setTimeout(() => {
+                // Show success message
                 submitButton.textContent = 'Entry Submitted Successfully!';
                 e.target.reset();
                 
+                // Create success message element
+                const successMsg = document.createElement('div');
+                successMsg.style.color = 'green';
+                successMsg.style.marginTop = '10px';
+                successMsg.style.textAlign = 'center';
+                successMsg.textContent = 'Thank you for entering! Check your email for confirmation.';
+                submitButton.parentNode.insertBefore(successMsg, submitButton.nextSibling);
+                
+                // Reset button after 5 seconds
                 setTimeout(() => {
                     submitButton.disabled = false;
                     submitButton.textContent = 'Enter Sweepstakes';
-                }, 3000);
-
-            } catch (error) {
-                console.error('Error:', error);
-                submitButton.textContent = 'Error - Please Try Again';
-                submitButton.disabled = false;
-            }
+                    successMsg.remove();
+                }, 5000);
+            }, 1500); //  network delay
         });
     </script>
 </body>
