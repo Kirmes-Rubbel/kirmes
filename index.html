@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirmes App - Win Prizes Playing Mini Games</title>
-    <meta name="description" content="Play mini games, collect medals, and win real prizes with Kirmes App. Free entry available!">
+    <title>Kirmes App - Free Sweepstakes Entry</title>
+    <meta name="description" content="Enter our free sweepstakes and win amazing prizes with Kirmes App. No purchase necessary.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -102,54 +102,21 @@
             margin-bottom: 15px;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin: 40px 0;
-        }
-
-        .button {
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .button-primary {
-            background: linear-gradient(135deg, var(--kirmes-red), var(--kirmes-gold));
-            color: white;
-        }
-
-        .button-secondary {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .contact {
+        .entry-form {
             background: var(--card-bg);
             padding: 40px;
             border-radius: 20px;
             margin-top: 60px;
             border: 1px solid rgba(255,255,255,0.1);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .contact h2 {
+        .entry-form h2 {
             color: var(--kirmes-gold);
             margin-bottom: 30px;
             text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 2rem;
         }
 
         .form-group {
@@ -160,10 +127,11 @@
             display: block;
             margin-bottom: 8px;
             color: rgba(255,255,255,0.9);
+            font-weight: 500;
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group select {
             width: 100%;
             padding: 12px;
             background: rgba(255,255,255,0.05);
@@ -171,13 +139,19 @@
             border-radius: 10px;
             color: white;
             font-size: 16px;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group select:focus {
             outline: none;
             border-color: var(--kirmes-gold);
+            box-shadow: 0 0 0 2px rgba(217, 166, 33, 0.1);
+        }
+
+        .form-group select option {
+            background: var(--dark-bg);
+            color: white;
         }
 
         .submit-button {
@@ -189,11 +163,35 @@
             cursor: pointer;
             font-weight: 600;
             width: 100%;
-            transition: transform 0.3s ease;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .submit-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(232, 53, 50, 0.2);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .legal-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .legal-text a {
+            color: var(--kirmes-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .legal-text a:hover {
+            color: var(--kirmes-red);
         }
 
         footer {
@@ -225,13 +223,14 @@
                 font-size: 2.5rem;
             }
 
-            .cta-buttons {
-                flex-direction: column;
+            .entry-form {
+                padding: 20px;
+                margin: 20px;
             }
 
-            .button {
-                width: 100%;
-                text-align: center;
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
@@ -242,8 +241,8 @@
             <div class="logo">
                 <img src="logo.png" alt="Kirmes App Logo">
             </div>
-            <h1>Win Real Prizes Playing Mini Games</h1>
-            <p>Join thousands of players winning exciting prizes through our skill-based mini games and sweepstakes.</p>
+            <h1>Free Sweepstakes Entry</h1>
+            <p>Enter our sweepstakes for free and win amazing prizes. No purchase necessary.</p>
         </div>
     </div>
 
@@ -251,39 +250,43 @@
         <div class="features">
             <div class="feature-card">
                 <h3>Free Entry</h3>
-                <p>No purchase necessary. Enter our sweepstakes for free via www.kirmes.app</p>
+                <p>Enter our sweepstakes completely free. No purchase or gameplay required.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Choose Your League</h3>
+                <p>Select Bronze, Silver, or Gold league for different prize categories.</p>
             </div>
             <div class="feature-card">
                 <h3>Win Real Prizes</h3>
-                <p>From Bronze to Gold leagues, win amazing prizes based on your performance.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Fair Play</h3>
-                <p>Skill-based mini games with equal chances for everyone to win.</p>
+                <p>Get a chance to win exciting prizes in your chosen league.</p>
             </div>
         </div>
 
-        <div class="cta-buttons">
-            <a href="#download" class="button button-primary">Download App</a>
-            <a href="#learn-more" class="button button-secondary">Learn More</a>
-        </div>
-
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <form id="contactForm" class="contact-form">
+        <div class="entry-form">
+            <h2>Enter Sweepstakes</h2>
+            <form id="sweepstakesForm">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required placeholder="Your name">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email address">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required placeholder="Your email">
+                    <label for="userId">User ID</label>
+                    <input type="text" id="userId" required placeholder="Enter your Kirmes App User ID">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" required placeholder="How can we help?"></textarea>
+                    <label for="league">Select League</label>
+                    <select id="league" required>
+                        <option value="" disabled selected>Choose your league</option>
+                        <option value="bronze">Bronze League</option>
+                        <option value="silver">Silver League</option>
+                        <option value="gold">Gold League</option>
+                    </select>
                 </div>
-                <button type="submit" class="submit-button">Send Message</button>
+                <button type="submit" class="submit-button">Enter Sweepstakes</button>
+                <p class="legal-text">
+                    By entering, you agree to our <a href="terms-of-service.html">Terms of Service</a> and 
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </p>
             </form>
         </div>
     </div>
@@ -313,35 +316,37 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        // Handle form submission
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+        // Handle sweepstakes entry submission
+        document.getElementById('sweepstakesForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const submitButton = e.target.querySelector('button');
             submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
+            submitButton.textContent = 'Submitting Entry...';
             
             try {
-                const formData = {
-                    name: document.getElementById('name').value,
+                const entryData = {
                     email: document.getElementById('email').value,
-                    message: document.getElementById('message').value,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    userId: document.getElementById('userId').value,
+                    league: document.getElementById('league').value,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    entryType: 'website'
                 };
 
-                await db.collection('contact_messages').add(formData);
+                // Add entry to Firestore
+                await db.collection('sweepstakes_entries').add(entryData);
                 
-                submitButton.textContent = 'Message Sent!';
+                submitButton.textContent = 'Entry Submitted Successfully!';
                 e.target.reset();
                 
                 setTimeout(() => {
                     submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
+                    submitButton.textContent = 'Enter Sweepstakes';
                 }, 3000);
 
             } catch (error) {
                 console.error('Error:', error);
-                submitButton.textContent = 'Error - Try Again';
+                submitButton.textContent = 'Error - Please Try Again';
                 submitButton.disabled = false;
             }
         });
